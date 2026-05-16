@@ -65,6 +65,12 @@ html {
 @media (min-width: 1024px) {
     /* no override for baseline on large screens */
 }
+/* Mobile: disable fixed background to prevent iOS zoom bug */
+@media (max-width: 768px) {
+    .parallax {
+        background-attachment: scroll;
+    }
+}
 html {
     scroll-behavior: smooth;
 }
