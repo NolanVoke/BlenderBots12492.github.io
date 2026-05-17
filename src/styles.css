@@ -68,6 +68,13 @@ body {
     animation-delay: 0.5s;
 }
 
+@media (max-width: 768px) {
+    .title::before {
+        content: "THE BLENDER BOTS";
+        animation: none;
+    }
+}
+
 @keyframes load-anim {
     0% {
         content: "3";
