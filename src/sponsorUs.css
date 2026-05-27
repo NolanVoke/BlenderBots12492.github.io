@@ -222,11 +222,11 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
 }
 .donate-button {
-    font-size: 1em;
+    font-size: 2em;
     background: #222;
     color: #ffd700;
     border-width: 0px;
