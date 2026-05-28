@@ -1,107 +1,431 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blender Bots | FTC Robotics</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="src/styles.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Blender Bots | FTC Robotics</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="src/photos/logo/favicon_io/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="src/photos/logo/favicon_io/favicon-16x16.png"
+        />
+        <link
+            rel="icon"
+            type="image/x-icon"
+            href="src/photos/logo/favicon_io/favicon.ico"
+        />
+        <link rel="stylesheet" href="src/baseline.css" />
+        <link rel="stylesheet" href="src/styles.css" />
+        <link rel="stylesheet" href="src/footer.css" />
+        <meta
+            name="description"
+            content="The Blender Bots High School team's web page."
+        />
+        <!-- Open Graph -->
+        <meta property="og:title" content="Blender Bots | FTC Robotics" />
+        <meta
+            property="og:description"
+            content="High school robotics team competing in FIRST Tech Challenge. Building robots and inspiring STEM since 2016."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://blenderbots12492.github.io/" />
+        <meta
+            property="og:image"
+            content="https://blenderbots12492.github.io/src/photos/team-photo.webp"
+        />
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blender Bots | FTC Robotics" />
+        <meta
+            name="twitter:description"
+            content="High school robotics team competing in FIRST Tech Challenge."
+        />
+    </head>
+    <body>
+        <div id="shared-header"></div>
+        <script>
+            (function () {
+                fetch("/src/header.html")
+                    .then((r) => r.text())
+                    .then((html) => {
+                        document.getElementById("shared-header").innerHTML =
+                            html;
+                        const btn = document.querySelector(".shared-cta");
+                        const isSponsor =
+                            location.pathname.endsWith("sponsorUs.html");
+                        if (btn) {
+                            btn.textContent = isSponsor ? "Home" : "Support Us";
+                            btn.onclick = () =>
+                                isSponsor
+                                    ? (location.href = "/index.html")
+                                    : (location.href = "/src/sponsorUs.html");
+                        }
+                    });
+            })();
+            window.addEventListener("load", () => {
+                if (window.location.hash) {
+                    const target = document.querySelector(window.location.hash);
+                    if (target) {
+                        // Re-trigger the scroll once the banner/JS content is ready
+                        target.scrollIntoView();
+                    }
+                }
+            });
+        </script>
+        <div class="content">
+            <section id="about" class="about opacity-transition">
+                <h2>Who are we</h2>
+                <p>
+                    We are the Blender Bots, a high school robotics team
+                    competing in the FIRST Tech Challenge (FTC). Since 2016,
+                    we've been building robots and competing in FTC
+                    competitions. We are a major club that is the only STEM
+                    opportunity offered on campus. We strive not just to compete
+                    in competition but to teach useful skills and have our team
+                    veterans mentor recruits.
+                </p>
+            </section>
+            <section id="rankings" class="info opacity-transition">
+                <h2>Rankings</h2>
+                <p>
+                    In the latest FTC competition (DECODE), we finished in the
+                    90th percentile. This is all due to the work our team put
+                    into designing and ideating our robot (AIM).
+                    <a
+                        class="scouts-link"
+                        href="https://ftcscout.org/teams/12492"
+                        >Click here</a
+                    >
+                    to see our world rankings.
+                </p>
+                <br />
+            </section>
 
-<div class="parallax"></div>
-<div><h1 class="title"></h1></div>
-
-<div class="content">
-    <section class="about">
-        <h1>Who we are:</h1>
-        <p>We are the <strong>Blender Bots</strong>, a high school robotics team competing in the FIRST Tech Challenge (FTC). Since 2013, we've been competing and building robots. We are the only STEM opportunity on campus.</p>
-    </section>
-    <section class="info">
-    <h1>
-    <span class="year">DECODE</span> World ranking <span class="worldPerc">90</span>%
-    </h1>
-
-    <a class="scouts" href="https://ftcscout.org/teams/12492">View on scouts</a>
-    <br>
-    </section>
-
-    <section class="ourRobots">
-        <h1>Robots</h1>
-        <h2 style="color: var(--neon-yellow); margin-bottom: 2rem;">Legacy of Innovation</h2>
-        <p>We have made bots since 2013. Here are some of our recent creations:</p>
-
-        <div class="bots">
-            <div class="bot" onclick="window.location = '/website/src/bot.html?bot=AIM'">
-                <h3 class="botName glitch" data-text="AIM">AIM</h3>
-                <div class="bot-image-placeholder">
-                    <img src="https://images.unsplash.com/photo-1531746790731-6c087fecd05a?auto=format&fit=crop&q=80&w=800" alt="AIM Robot">
+            <section id="robots" class="robots">
+                <div class="robots-title opacity-transition">
+                    <h2>Robots</h2>
+                    <p>
+                        We have been making bots since 2016. Here are some of
+                        our recent creations:
+                    </p>
                 </div>
-                <p style="margin-top: 4px;">DECODE 2025-2026</p>
-            </div>
+                <div class="bot-grid">
+                    <a class="bot-card" href="src/bot.html?bot=AIM">
+                        <h2 class="bot-name" data-text="AIM">AIM</h2>
+                        <div class="bot-image-placeholder">
+                            <img
+                                src="src/photos/DECODE1.png"
+                                alt="AIM Robot"
+                                loading="lazy"
+                                decoding="async"
+                                width="600"
+                                height="400"
+                            />
+                        </div>
+                        <p style="margin-top: 4px">
+                            <img
+                                alt=""
+                                class="year-icon"
+                                src="https://ftc-resources.firstinspires.org/uploads/6f38e49e-8cd2-46e2-8885-c872aee20eaa"
+                                loading="lazy"
+                                decoding="async"
+                                width="20"
+                                height="20"
+                            />
+                            DECODE 2025-2026
+                        </p>
+                    </a>
 
-            <div class="bot" onclick="window.location = '/website/src/bot.html?bot=BUMBLE_BEE'">
-                <h3 class="botName glitch" data-text="BUMBLE BEE">BUMBLE BEE</h3>
-                <div class="bot-image-placeholder">
-                    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=800" alt="Bumble Bee Robot">
+                    <a class="bot-card" href="src/bot.html?bot=BUMBLE_BEE">
+                        <h2 class="bot-name" data-text="BUMBLE BEE">
+                            BUMBLE BEE
+                        </h2>
+                        <div class="bot-image-placeholder">
+                            <img
+                                src="src/photos/INTO_THE_DEEP1.png"
+                                alt="Bumble Bee Robot"
+                                loading="lazy"
+                                decoding="async"
+                                width="600"
+                                height="400"
+                            />
+                        </div>
+                        <p style="margin-top: 4px">
+                            <img
+                                alt="Into The Deep"
+                                src="https://i0.wp.com/firstroboticsbc.org/wp-content/uploads/2024/04/FIRST_DIVE-intothedeep-PatchLogo.webp?resize=476%2C526&ssl=1"
+                                class="year-icon"
+                                loading="lazy"
+                                decoding="async"
+                                width="20"
+                                height="20"
+                            />
+                            INTO THE DEEP 2024-2025
+                        </p>
+                    </a>
+
+                    <a class="bot-card" href="src/bot.html?bot=strugie">
+                        <h2 class="bot-name" data-text="STRUGIE">STRUGIE</h2>
+                        <div class="bot-image-placeholder">
+                            <img
+                                src="src/photos/CENTERSTAGE1.png"
+                                alt="strugie"
+                                loading="lazy"
+                                decoding="async"
+                                width="600"
+                                height="400"
+                            />
+                        </div>
+                        <p style="margin-top: 4px">
+                            <img
+                                alt="centerstage"
+                                class="year-icon"
+                                src="https://nmftc.org/wp-content/uploads/2023/07/FIRST_CENTERSTAGE_Logo_Horizontal_RGB_June.png"
+                                loading="lazy"
+                                decoding="async"
+                                width="20"
+                                height="20"
+                            />
+                            CENTER STAGE 2023-2024
+                        </p>
+                    </a>
                 </div>
-                <p style="margin-top: 4px;">INTO THE DEEP 2024-2025</p>
-            </div>
-
-            <div class="bot" onclick="window.location = '/website/src/bot.html?bot=strugie'">
-                <h3 class="botName glitch" data-text="strugie">strugie</h3>
-                <div class="bot-image-placeholder">
-                    <img src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=800" alt="strugie">
+            </section>
+            <section id="sponsors" class="sponsors">
+                <h2 class="opacity-transition">Sponsors</h2>
+                <div class="sponsors-grid">
+                    <a
+                        class="sponsor-link"
+                        href="https://www.splunk.com/"
+                        target="_blank"
+                        >Splunk</a
+                    >
+                    <a
+                        class="sponsor-link"
+                        href="https://www.emotiv.com/"
+                        target="_blank"
+                        >Emotiv</a
+                    >
+                    <a
+                        class="sponsor-link"
+                        href="https://www.playingatlearning.org/"
+                        target="_blank"
+                        >Playing at Learning</a
+                    >
+                    <a
+                        class="sponsor-link"
+                        href="https://www.microsoft.com/"
+                        target="_blank"
+                        >Microsoft</a
+                    >
+                    <a
+                        class="sponsor-link"
+                        href="https://delmar.cuhsd.org/apps/pages/ptsa"
+                        target="_blank"
+                        >Del Mar PTSA</a
+                    >
                 </div>
-                <p style="margin-top: 4px;">CENTER STAGE 2023-2024</p>
-            </div>
+            </section>
+            <section id="outreach" class="outreach-section">
+                <div class="outreach-item opacity-transition">
+                    <img
+                        alt="outreachImg"
+                        src="src/photos/outreach1.png"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                    <div class="outreach-text">
+                        <h2 class="" data-text="OutReach">Outreach</h2>
+                        <p>
+                            This year, we set up several fundraisers partnering
+                            with restaurants such as Mendocino Farms, Panda
+                            Express, and Shake Shack. We also spread the word
+                            about our club and raised money by selling snacks at
+                            school events like cultural night, 8th-grade night,
+                            and reached out and had informational meetings at
+                            the start of the school year. We were very
+                            successful this year and had over 10 brand new
+                            members, greatly expanding the team.
+                        </p>
+                    </div>
+                </div>
+                <div class="outreach-item opacity-transition">
+                    <img
+                        alt="Gracious Professionalism img"
+                        src="src/photos/graciousprofessionalism1.png"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                    <div class="outreach-text">
+                        <h2 class="" data-text="Gracious Professionalism">
+                            Gracious Professionalism
+                        </h2>
+                        <p>
+                            Gracious Professionalism is a key point of FTC,
+                            which is to not just compete against other teams but
+                            to respect and help them. We've shown gracious
+                            professionalism over the season by giving people
+                            replacement parts and even helping with debugging
+                            code. Among the people we helped are RMS (Redwood
+                            Middle School) Overdrive, Wolfbotics, and Inquiry
+                            Robotics.
+                        </p>
+                    </div>
+                </div>
+                <div class="outreach-item opacity-transition">
+                    <img
+                        alt="STEM img"
+                        src="src/photos/STEM2.png"
+                        loading="lazy"
+                        decoding="async"
+                    />
+                    <div class="outreach-text">
+                        <h2 class="" data-text="STEM">STEM</h2>
+                        <p>
+                            We are the only STEM opportunity on campus. This
+                            means any students who want to do STEM would have to
+                            be on the Blender Bots team. This causes challenges
+                            due to large demand and limited spots. To fix this,
+                            we plan on making a JV team; however, for this, we
+                            need more sponsors and a larger space. As we are a
+                            club, we will not refuse any student who wants to
+                            join, but they may have to just shadow our veterans
+                            for a period of time until a spot opens up.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section id="contact" class="contact">
+                <h2 class="opacity-transition">Contact Us</h2>
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <h3>Email</h3>
+                        <a href="mailto:team12492@gmail.com">team12492@gmail.com</a>
+                    </div>
+                    <div class="contact-card">
+                        <h3>YouTube</h3>
+                        <a href="" target="_blank">@BlenderBotsFTC</a>
+                    </div>
+                    <div class="contact-card">
+                        <h3>School Address</h3>
+                        <p>1224 Del Mar Ave, San Jose, CA 95128</p>
+                    </div>
+                </div>
+            </section>
         </div>
-    </section>
-    <section class="sponsors">
-        <h1>Sponsors</h1>
-        <div class="sponsorsGrid">
-            <div class="sponsor">Cyberdyne Systems</div>
-            <div class="sponsor">Stark Industries</div>
-            <div class="sponsor">Wayne Enterprises</div>
-            <div class="sponsor">Aperture Science</div>
-            <div class="sponsor">Omni Consumer Products</div>
-        </div>
-    </section>
-    <section class="outreachSec">
-    <div class="outreach">
-    <h3 class="glitch" data-text="OutReach">OutReach</h3>
-    <img alt="outreachImg" src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=800">
-    <p>This year we managed to do ______________</p>
-    </div>
-    <div class="GraciousProfessionalism">
-    <h3 class="glitch" data-text="Gracious Professionalism">Gracious Professionalism</h3>
-    <img alt="Gracious Professionalism img" src="https://images.unsplash.com/photo-1589254065878-42c9da997008?auto=format&fit=crop&q=80&w=800">
-    <p>over the season we have given people replacement parts and even helped with debuging code, among the people we helped are RMS overdrive, Wolfbotics, and ____</p>
-    </div>
-    </section>
-    <section class="contact">
-        <h1>Contact Us</h1>
-        <div class="contactGrid">
-            <div class="contactCard">
-                <h3>Email</h3>
-                <a href="">blenderbots@school.edu</a>
+        <footer>
+            <div>
+                <ul>
+                    <li><a href="mailto:team12492@gmail.com">contact us</a></li>
+                    <li><a href="src/sponsorUs.html">sponsor us</a></li>
+                    <li><a href="https://cuhsd.graystep.com/Index.aspx#/780365/product/55817">Donate</a></li>
+                    <li>
+                        <a href="https://www.instagram.com/blenderbots/"
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-instagram"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
+                                /></svg
+                        ></a>
+                        <a href=""
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-youtube"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.122C.002 7.343.01 6.6.064 5.78l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"
+                                /></svg
+                        ></a>
+                        <a href="https://ftcscout.org/teams/12492"
+                            ><svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                fill="currentColor"
+                                class="bi bi-binoculars-fill"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                    d="M4.5 1A1.5 1.5 0 0 0 3 2.5V3h4v-.5A1.5 1.5 0 0 0 5.5 1h-1zM7 4v1h2V4h4v.882a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V13H9v-1.5a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5V13H1V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882V4h4zM1 14v.5A1.5 1.5 0 0 0 2.5 16h3A1.5 1.5 0 0 0 7 14.5V14H1zm8 0v.5a1.5 1.5 0 0 0 1.5 1.5h3a1.5 1.5 0 0 0 1.5-1.5V14H9zm4-11H9v-.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5V3z"
+                                /></svg
+                        ></a>
+                    </li>
+                </ul>
             </div>
-            <div class="contactCard">
-                <h3>YouTube</h3>
-                <a href="" target="_blank">@BlenderBotsFTC</a>
+            <div>
+                <br />
+                <a href="/index.html"
+                    ><img
+                        alt="The Blender Bots"
+                        src="src/photos/logo/Banner.png"
+                        loading="lazy"
+                        decoding="async"
+                /></a>
             </div>
-            <div class="contactCard">
-                <h3>School Address</h3>
-                <p>123 Robotics Way, San Jose, CA 95112</p>
-            </div>
-        </div>
-    </section>
-    <div style="text-align: center;" class="sponserUs"><a href="">SPONSER US</a></p>
-    <br/>
-    <br/>
-</div>
-
-</body>
+        </footer>
+        <script>
+            class FadeIn {
+                items = [];
+                constructor() {
+                    window.addEventListener("scroll", () => {
+                        this.items.forEach((item) => {
+                            if (
+                                item.element.getBoundingClientRect().top <
+                                window.innerHeight - 100
+                            ) {
+                                item.element.classList.add("fade-visible");
+                                item.visible = true;
+                            }
+                        });
+                    });
+                }
+                add(element) {
+                    if (!element) return;
+                    element.classList.add("fade-ready");
+                    this.items.push({
+                        element,
+                        visible: false,
+                    });
+                }
+                addMultiple(elements) {
+                    for (const element of elements) {
+                        this.add(element);
+                    }
+                }
+            }
+            const fadeIn = new FadeIn();
+            fadeIn.addMultiple(document.querySelectorAll(".bot-card"));
+            fadeIn.addMultiple(document.querySelectorAll(".outreach-item"));
+            fadeIn.addMultiple(document.querySelectorAll(".contact-card"));
+            fadeIn.addMultiple(document.querySelectorAll(".sponsor-link"));
+            fadeIn.add(document.querySelector(".about"));
+            fadeIn.add(document.querySelector(".contact > h2"));
+            fadeIn.add(document.querySelector(".info"));
+            fadeIn.add(document.querySelector(".robots-title"));
+            fadeIn.add(document.querySelector(".sponsors > h2"));
+        </script>
+    </body>
 </html>

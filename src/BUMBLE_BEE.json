@@ -1,101 +1,69 @@
 {
   "name": "BUMBLE BEE",
   "heroTitle": "Bumble Bee",
-  "description": "placeholder",
-  "image": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200",
-  "variants": [
-    "placeholder",
-    "placeholder",
-    "placeholder",
-    "placeholder"
-  ],
+  "image": "photos/INTO_THE_DEEP1.png",
   "stack": [
-    { "title": "placeholder", "body": "placeholder" },
-    { "title": "placeholder", "body": "placeholder" },
-    { "title": "placeholder", "body": "placeholder" },
-    { "title": "placeholder", "body": "placeholder" }
+    { "title": "Drive", "body": "Mecanum Drive" },
+    { "title": "Intake", "body": "A claw with three axis of freedom" },
+    { "title": "Gearbox", "body": "We could rotate around our heaver slides using a Gearbox with lots of torque" },
+    { "title": "Viper Slides", "body": "4 times extention with long viperslides that could rotate." }
   ],
-  "theme": {
-    "hue": "52deg",
-    "primary": "#fef08a",
-    "accent": "#fbbf24",
-    "magenta": "#f59e0b",
-    "components": {
-      "bg": "rgba(22, 17, 5, 0.62)",
-      "border": "rgba(255, 215, 115, 0.2)",
-      "shadow": "0 12px 28px rgba(0,0,0,0.36)",
-      "solid": false
-    }
-  },
-  "glitch": {
-    "enabled": true,
-    "primary": "#fbbf24",
-    "secondary": "#fef08a"
-  },
-  "features": {
-    "badges": true,
-    "stats": true,
-    "stack": true,
-    "telemetry": true,
-    "checklist": true,
-    "timeline": true,
-    "plays": true,
-    "gallery": true
-  },
   "stats": [
-    { "label": "placeholder", "value": "placeholder" },
-    { "label": "placeholder", "value": "placeholder" },
-    { "label": "placeholder", "value": "placeholder" },
-    { "label": "placeholder", "value": "placeholder" },
-    { "label": "placeholder", "value": "placeholder" },
-    { "label": "placeholder", "value": "placeholder" }
-  ],
-  "badges": [
-    "placeholder"
-
+    { "label": "Chassiss", "value": "Custom Machined Aluminum Chassiss with three gobilda opdometry pods, and gobilda macanum wheels" },
+    {
+      "label": "Drive Team",
+      "value": "2 drivers + 1 coach + (optional) 1 human player"
+    },
+    { "label": "Auto", "value": "3 Specimens or 1 sample, an experimental 2 sample auto that use the camera, was difficult due to the lack of intake" },
+    { "label": "Scoring", "value": "about 95 points solo, we had the ability to do either specimins or samples providing maximum flexibility with our partner" },
+    { "label": "Awards", "value": "Design Award 1st place" },
+    { "label": "Endgame", "value": "Level 1 hang early in the season" }
   ],
   "timeline": [
-    { "year": "placeholder", "title": "placeholder", "detail": "placeholder" },
-    { "year": "placeholder", "title": "placeholder", "detail": "placeholder" },
-    { "year": "placeholder", "title": "placeholder", "detail": "placeholder" },
-    { "year": "placeholder", "title": "placeholder", "detail": "placeholder" },
-    { "year": "placeholder", "title": "placeholder", "detail": "placeholder" },
-    { "year": "placeholder", "title": "placeholder", "detail": "placeholder" }
-  ],
-  "checklist": [
-    { "item": "placeholder", "status": "ready" },
-    { "item": "placeholder", "status": "ready" },
-    { "item": "placeholder", "status": "ready" },
-    { "item": "placeholder", "status": "ready" },
-    { "item": "placeholder", "status": "todo" },
-    { "item": "placeholder", "status": "todo" }
-  ],
-  "telemetry": [
-    { "label": "placeholder", "value": "6.2 s", "fill": 90 },
-    { "label": "placeholder", "value": "88%", "fill": 88 },
-    { "label": "placeholder", "value": "4%", "fill": 4 },
-    { "label": "placeholder", "value": "93%", "fill": 93 },
-    { "label": "placeholder", "value": "89%", "fill": 89 }
-  ],
-  "plays": [
-    { "title": "placeholder", "time": "15s", "detail": "placeholder" },
-    { "title": "placeholder", "time": "15s", "detail": "placeholder" },
-    { "title": "placeholder", "time": "15s", "detail": "placeholder" },
-    { "title": "placeholder", "time": "15s", "detail": "placeholder" }
+    {
+      "year": "Sept 7  ",
+      "title": "Kickoff",
+      "detail": "Brainstorming game strategy and initial designs"
+    },
+    {
+      "year": "Oct 31  ",
+      "title": "Screamage",
+      "detail": "Parts came in late so we only had a chassis"
+    },
+    { "year": "Nov 9  ", "title": "Meet #1", "detail": "" },
+    { "year": "Dec 13  ", "title": "Meet #2", "detail": "" },
+    {
+      "year": "Jan 18  ",
+      "title": "Meet #3",
+      "detail": "slides broke on bucket causing our infamous sample launch"
+    },
+    {
+      "year": "Feb 8  ",
+      "title": "League Tournament",
+      "detail": "We got 5th in quals and for playoffs we got third"
+    },
+    {
+      "year": "May 17  ",
+      "title": "Self-hosted scrimmage",
+      "detail": "We hosted a scrimmage with a few teams that did not move on from Leagues"
+    }
   ],
   "gallery": [
-    { "src": "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=1200", "alt": "placeholder" },
-    { "src": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&q=80&w=1200", "alt": "placeholder" },
-    { "src": "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80&w=1200", "alt": "placeholder" },
-    { "src": "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&q=80&w=1200", "alt": "placeholder" }
-  ],
-  "notes": "______ placeholder ______",
-  "background": {
-    "colors": {
-      "tone1": "#fef08a",
-      "tone2": "#fbbf24",
-      "tone3": "#f59e0b",
-      "base": "#050505"
+    {
+      "src": "photos/INTO_THE_DEEP1.png",
+      "alt": "Bumble Bee"
+    },
+    {
+      "src": "photos/INTO_THE_DEEP2.png",
+      "alt": "Bumble Bee"
+    },
+    {
+      "src": "photos/INTO_THE_DEEP3.png",
+      "alt": "Bumble Bee"
+    },
+    {
+      "src": "photos/INTO_THE_DEEP4.png",
+      "alt": "Chassis"
     }
-  }
+  ]
 }

@@ -1,54 +1,36 @@
 {
   "name": "AIM",
   "heroTitle": "AIM",
-  "description": "nothing here",
-  "image": "https://images.unsplash.com/photo-1581091012184-5c7b2e1a4973?auto=format&fit=crop&q=80&w=1200",
-  "variants": [
-    "poo",
-    "non poo",
-    "hehe ha",
-    "debugging"
-  ],
+  "image": "photos/DECODE1.png",
   "stack": [
-    { "title": "Vision", "body": "BEST COLORS EVERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR." },
-    { "title": "path", "body": "start at home then to grave" },
-    { "title": "Intake", "body": "takes thingys duhhh" },
-    { "title": "Drivebase", "body": "none hehehe" }
-  ],
-  "theme": {
-    "hue": "76deg",
-    "primary": "#ff8200",
-    "accent": "#ff6200",
-    "magenta": "#736e45",
-    "components": {
-      "bg": "rgba(115, 110, 69, 0.6)",
-      "border": "rgba(115, 110, 69, 0.16)",
-      "shadow": "0 12px 28px rgba(0,0,0,0.36)",
-      "solid": false
+    {
+      "title": "Vision",
+      "body": "Did not use limelight instead used a webcam and onboard computations"
+    },
+    {
+      "title": "Pathing",
+      "body": "used pedropathing and GoBuilda pinpoint module"
+    },
+    {
+      "title": "Intake",
+      "body": "A boot wheel based intake, same motor powered the feeder mechanism"
+    },
+    {
+      "title": "Launcher",
+      "body": "Used parallel launcher which is two wheels rotating opposite of each other that the ball is pushed through"
     }
-  },
-  "glitch": {
-    "enabled": true,
-    "primary": "#ff8200",
-    "secondary": "#ff8200"
-  },
-  "features": {
-    "badges": true,
-    "stats": true,
-    "stack": true,
-    "telemetry": true,
-    "checklist": true,
-    "timeline": true,
-    "plays": false,
-    "gallery": true
-  },
+  ],
   "stats": [
-    { "label": "Drive", "value": "Tank with 50mm " },
-    { "label": "Weight", "value": "43 tons" },
-    { "label": "Player", "value": "1 driver + 1 operator + 1 human bystander" },
-    { "label": "Auto", "value": "2.5 sample avg + 15 ball loss" },
-    { "label": "Camera", "value": "camera mannnnnn" },
-    { "label": "Endgame", "value": "8s climb to the roof" }
+    { "label": "Drive", "value": "Mecanum Drive" },
+    { "label": "Weight", "value": "~30 lbs" },
+    {
+      "label": "Drive Team",
+      "value": "2 drivers + 1 coach + (optional) 1 human player"
+    },
+    { "label": "Auto", "value": "12 balls close, 3 balls far" },
+    { "label": "Camera", "value": "Logitech webcam" },
+    { "label": "Scoring", "value": "about 100 points solo" },
+    { "label": "Endgame", "value": "parks in ~3 seconds" }
   ],
   "badges": [
     "huh",
@@ -61,42 +43,54 @@
     "Fast hang"
   ],
   "timeline": [
-    { "year": "Aug 34", "title": "Kickoff", "detail": "no" },
-    { "year": "Sep 34 ", "title": "Kickoff Kickoff", "detail": "noo" },
-    { "year": "Oct 34  ", "title": "Kickoff Kickoff Kickoff", "detail": "nooo" },
-    { "year": "Nov 34 ", "title": "Kickoff Kickoff Kickoff Kickoff", "detail": "noooo" },
-    { "year": "Dec 34", "title": "Kickoff Kickoff Kickoff Kickoff Kickoff", "detail": "noooooo" },
-    { "year": "Jan 34", "title": "non Kickoff", "detail": "still no " }
-  ],
-  "checklist": [
-    { "item": "Calibrate cameras", "status": "todo" },
-    { "item": "Tighten intake belt", "status": "todo" },
-    { "item": "field map", "status": "ready" },
-    { "item": "Swap battery", "status": "ready" },
-    { "item": "Fan boom test", "status": "todo" },
-    { "item": "Upload latest log", "status": "todo" }
-  ],
-  "telemetry": [
-    { "label": "Cycle time", "value": "9.0 s", "fill": 0 },
-    { "label": "Auto reliability", "value": "9000%", "fill": 1000 },
-    { "label": "Vision uptime", "value": "NONE BURH", "fill": 0 },
-    { "label": "CPU ", "value": "all", "fill": 67 },
-    { "label": "Battery health", "value": "88%", "fill": 45 }
+    {
+      "year": "Sept 6  ",
+      "title": "Kickoff",
+      "detail": "We immediately started to brainstorm"
+    },
+    {
+      "year": "Oct 26  ",
+      "title": "The Screamage",
+      "detail": "we had the robot that would become our final version"
+    },
+    {
+      "year": "Nov 1  ",
+      "title": "South Bay Meet #1",
+      "detail": "Wheel belt broke before first match had to borrow a belt from a different team"
+    },
+    {
+      "year": "Dec 12  ",
+      "title": "South Bay Meet #2",
+      "detail": "No change to placement"
+    },
+    {
+      "year": "Jan 17  ",
+      "title": "South Bay Meet #3",
+      "detail": "Increased placement up by one spot"
+    },
+    {
+      "year": "Feb 7  ",
+      "title": "South Bay League Tournament",
+      "detail": "at the end of quals we were third and at the end of tournament we were still third"
+    }
   ],
 
   "gallery": [
-    { "src": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1200", "alt": "bot" },
-    { "src": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200", "alt": "bot" },
-    { "src": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&q=80&w=1200", "alt": "bot" },
-    { "src": "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&q=80&w=1200", "alt": "bot" }
-  ],
-  "notes": "this is for a robot duhhh",
-  "background": {
-    "colors": {
-      "tone1": "#543418",
-      "tone2": "#78471d",
-      "tone3": "#0c4d61",
-      "base": "#0c4d61"
+    {
+      "src": "photos/DECODE1.png",
+      "alt": "AIM"
+    },
+    {
+      "src": "photos/DECODE2.png",
+      "alt": "AIM"
+    },
+    {
+      "src": "photos/DECODE3.png",
+      "alt": "AIM"
+    },
+    {
+      "src": "photos/DECODE4.png",
+      "alt": "AIM"
     }
-  }
+  ]
 }

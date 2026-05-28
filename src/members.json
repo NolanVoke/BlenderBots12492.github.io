@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Joseph",
+    "years": ["24-25", "25-26"],
+    "roles": ["lead programmer", "vice president"],
+    "subteam": "programming",
+    "bio": "VERY VERY handsome",
+    "team": "Blender Bots"
+  },
+  {
+    "name": "Santi B.",
+    "years": ["25-26"],
+    "roles": [],
+    "subteam": "programming",
+    "bio": "Has done absolutely nothing for the team",
+    "team": "Blender Bots"
+  },
+  {
+    "name": "Niranjan",
+    "years": ["24-25", "25-26"],
+    "roles": [],
+    "subteam": "mechanics",
+    "bio": "By a mile the best robotics member",
+    "team": "Blender Bots"
+  },
+  {
+    "name": "Adrian",
+    "years": ["23-24", "24-25", "25-26"],
+    "roles": ["lead mechanic", "president"],
+    "subteam": "mechanics",
+    "bio": "Not nearly as handsome as Joseph",
+    "team": "Blender Bots"
+  },
+  {
+    "name": "Alexa",
+    "years": ["22-23", "23-24", "24-25", "25-26"],
+    "roles": ["lead marketer"],
+    "subteam": "Marketing",
+    "bio": "Next year we are done for without her",
+    "team": "Blender Bots"
+  },
+  {
+    "name": "Juan",
+    "years": ["25-26"],
+    "roles": ["secretary"],
+    "subteam": "Marketing",
+    "bio": "Accidently picked the role with the most paperwork",
+    "team": "Blender Bots"
+  }
+]

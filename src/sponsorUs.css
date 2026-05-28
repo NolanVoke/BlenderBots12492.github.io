@@ -1,0 +1,252 @@
+:root {
+    --neon-pink: #f8f005;
+    --neon-cyan: #9c8400;
+    --neon-yellow: #f8f005;
+    --bg-black: #0a0a0a;
+    --neon-magenta: #ccc;
+    /* Unified navigation sizing across pages (mobile baseline) */
+    --nav-height: 40px;
+    --nav-logo-height: 25px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-black);
+    color: white;
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Parallax handled by baseline.css; removed per-page parallax to avoid drift */
+
+.title {
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    width: 100%;
+    font-weight: 500;
+}
+
+.title::before {
+    font-size: 2em;
+    color: white;
+    font-family: Inter; /*required for anim*/
+    text-shadow: 2px 2px 2px var(--neon-cyan);
+    font-family: inter;
+    font-weight: 800;
+    content: "SPONSOR US";
+}
+
+h1,
+h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    margin: 40px 20px 10px;
+    color: var(--neon-magenta);
+    text-shadow: 2px 2px 0px var(--neon-cyan);
+}
+
+p {
+    max-width: 900px;
+    margin: 0 20px 40px;
+    line-height: 1.6;
+    color: #ccc;
+}
+
+strong {
+    color: white;
+}
+
+.back {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    transition: transform 0.1s ease;
+}
+.back:hover svg,
+.back:hover,
+span {
+    transform: translateX(-4px);
+    transition: transform 0.2s ease;
+}
+.back svg {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    fill: white;
+}
+a {
+    color: white;
+
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+/* ========================================
+   NAVIGATION / SPONSOR BAR
+   ======================================== */
+.sponsor-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(
+        180deg,
+        rgba(10, 10, 10, 0.95) 0%,
+        rgba(10, 10, 10, 0.8) 100%
+    );
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    border-bottom: 1px solid rgba(248, 240, 5, 0.2);
+    padding: 2px 0;
+    height: 40px;
+}
+.sponsor-bar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 5px;
+}
+.sponsor-bar a:hover {
+    transition: 0.5s;
+    color: yellow;
+}
+
+.sponsor-bar-inner {
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.sponsor-bar-link {
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 12px;
+    padding: 4px 12px;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.sponsor-bar-link:hover {
+    color: var(--neon-yellow);
+    background: rgba(248, 240, 5, 0.08);
+}
+
+/* Content container for parity with index.html */
+.content {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Ensure the logo in the sponsor bar lines up with index.html baseline */
+.sponsor-bar > a > img.nav-logo,
+.sponsor-bar > img.nav-logo {
+    height: 25px;
+    width: auto;
+    margin-left: 15px;
+}
+
+/* Mobile baseline handled by baseline.css now; remove conflicting rules here */
+
+/* CTA button: black background with gold border */
+.cta-btn {
+    background: #000;
+    color: #ffd700;
+    border-width: 0px;
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-weight: 800;
+    font-family: inherit;
+    cursor: pointer;
+    margin: 0 12px;
+    text-transform: none;
+    letter-spacing: 0.4px;
+    box-shadow: none;
+    transition:
+        transform 0.15s ease,
+        background 0.2s ease;
+}
+.cta-btn:hover {
+    background: #111;
+    color: #ffd700;
+    transform: scale(1.05);
+}
+.cta-btn:focus {
+    outline: none;
+}
+
+.sponsor-bar-link::before {
+    content: "";
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2px;
+    top: 20px;
+    left: 0;
+    background-color: yellow;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.sponsor-bar-link:hover::before {
+    transform: scaleX(1);
+}
+.donate-btn-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 100%;
+}
+.donate-button {
+    font-size: 2em;
+    background: #222;
+    color: #ffd700;
+    border-width: 0px;
+    border-radius: 999px;
+    padding: 8px 18px;
+    font-weight: 800;
+    font-family: inherit;
+    cursor: pointer;
+    text-transform: none;
+    letter-spacing: 0.4px;
+    box-shadow: none;
+    transition:
+        transform 0.15s ease,
+        background 0.2s ease;
+}
+.donate-button:hover {
+    background: #333;
+    color: #ffd700;
+    transform: scale(1.05);
+}
+.donate-button:focus {
+    outline: none;
+}
